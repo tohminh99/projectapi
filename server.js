@@ -3,7 +3,6 @@ var fs           = require('fs');
 var serveStatic = require('serve-static-restify');
 var jwt          = require('restify-jwt');
 
-//const MainController = require('./controller/MainController');
 
 const Models = require('./models');
 

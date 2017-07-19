@@ -1,33 +1,32 @@
-	// create the module and name it scotchApp
+
 
 	var myApp = angular.module('myApp', ['ngRoute']);
 
-	// configure our routes
+	
 	myApp.config(function($routeProvider) {
 		$routeProvider
 
-			// route for the home page
+			
 			.when('/', {
 				templateUrl : 'home.html',
 				controller  : 'mainController'
 			})
 
-			// route for the about page
+			
 			.when('/about', {
 				templateUrl : 'about.html',
 				controller  : 'aboutController'
 			})
 
-			// route for the contact page
+			
 			.when('/search', {
 				templateUrl : 'search.html',
 				controller  : 'searchController'
 			});
 	});
 
-	// create the controller and inject Angular's $scope
+	
 	myApp.controller('mainController', function($scope) {
-		// create a message to display in our view
 		$scope.message = 'Welcome to Places Search Project';
 	});
 
@@ -85,7 +84,7 @@ myApp.controller('newPlaceController', function($scope, Map, $http) {
         $scope.apiError = false;
         Map.search($scope.searchPlace)
         .then(
-            function(res) { // success
+            function(res) { 
                 Map.addMarker(res);
                 $scope.place.name = res.name;
                 $scope.place.lat = res.geometry.location.lat();
