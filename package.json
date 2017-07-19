@@ -1,0 +1,26 @@
+{
+  "name": "apiproject",
+  "version": "1.0.0",
+  "description": "a api project",
+  "main": "server.js",
+  "dependencies": {
+    "restify": "^4.3.1",
+    "restify-jwt": "^0.4.0",
+    "sequelize": "^4.3.2",
+    "serve-static-restify": "^1.0.0",
+    "sqlite3": "^3.1.8",
+    "validator": "^8.0.0",
+    "@google/maps": "^0.4.2",
+    "hoek": "^4.1.1",
+    "jsonwebtoken": "^7.4.1",
+    "moment": "^2.18.1",
+    "password-hash": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "mctoh",
+  "license": "ISC"
+}

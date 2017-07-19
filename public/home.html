@@ -1,0 +1,73 @@
+<style>
+#map { 
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+</style>
+<div class="jumbotron text-center">
+	<h1>Home Page</h1>
+	
+	<p>{{ message }}</p>
+<div class="container" ng-app="myApp" ng-controller="newPlaceController">
+    <div class="alert alert-danger text-center" role="alert" ng-show="apiError">
+        <b>API Error : </b>
+        <span>{{ apiStatus }}</span>
+    </div>
+    
+    <form name="searchForm" novalidate 
+    ng-submit="search()">
+        <div class="input-group">
+            <input name="place" type="text" class="form-control" 
+            ng-model="searchPlace" required autofocus />
+            <span class="input-group-btn">
+                <button class="btn btn-primary" 
+                ng-disabled="searchForm.$invalid">Search</button>
+            </span>
+        </div>
+    </form>
+        
+    <div id="map"></div>
+      
+    <form name="resForm" class="form-horizontal" novalidate 
+    ng-submit="send()">
+        <div class="form-group">
+            <label for="resName" class="col-xs-2 control-label">Name</label>
+            <div class="col-xs-10">
+                <input name="resName" type="text" class="form-control" 
+                ng-model="place.name" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="resLat" class="col-xs-2 control-label">Latitude</label>
+            <div class="col-xs-10">
+                <input name="resLat" type="number" class="form-control" 
+                ng-model="place.lat" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="resLng" class="col-xs-2 control-label">Longitude</label>
+            <div class="col-xs-10">
+                <input name="resLng" type="number" class="form-control" 
+                ng-model="place.lng" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button class="btn btn-success" 
+                ng-disabled="resForm.$invalid">Favourite</button>
+            </div>
+        </div>
+        <div class="container" style="margin-bottom:100px">
+		<h3>{{search_location}}</h3>
+		<div>{{temp_c}}</div>
+		<div>{{wind_degree}}</div>
+		<div>{{wind_dir}}</div>
+		<div>{{pressure_mb}}</div>
+		<div>{{humidity}}</div>
+		<div>{{condition}}</div>
+		</div>
+    </form>
+    
+</div>
